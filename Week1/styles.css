@@ -1,0 +1,73 @@
+/* Body */
+
+body {
+margin: 0;
+padding: 0;
+background: #efeee7;
+font-size: 18px;
+line-height: 150%;
+font-family: "Georgia",Times New Roman,Times,serif;
+font-color: 333333;
+
+}
+
+header {
+
+	background: #d21034;
+}
+
+h1 {
+
+background: #333333;
+padding: 20px 0;
+color: #FFFFFF;
+margin: 0;
+font-size: 28px;
+text-align: center;
+margin-bottom: 20px;
+}
+
+h2 {
+
+font-size: 24px;
+
+}
+
+a {
+
+color: #d21034;
+
+}
+
+/* Classes */
+
+.container {
+width: 1024px;
+margin: 0 auto;
+
+}
+
+/* ID's */
+
+
+#mainbio {	
+	float: left;
+	width: 70%;
+
+}
+
+
+#contactinfo {
+	float: left;
+	width: 30%;
+	text-decoration-color: #d21034;
+}
+
+#bioimage {
+	float: left;
+	width: 200px;
+	height: 200px;
+	margin-right: 25px;
+
+}
+
