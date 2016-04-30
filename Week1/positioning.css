@@ -1,0 +1,85 @@
+/* Classes */
+
+body {
+
+}
+
+.wrapper {
+
+	width: 600px;
+	margin: 0 auto;
+}
+
+h1 {
+
+	font-size: 36px;
+	line-height: 45px;
+	margin-bottom: 20px;
+
+}
+
+p {
+	font-size: 18px;
+	line-height: 28px;
+	margin-bottom: 15px;
+}
+
+
+.full {
+
+	margin: 0 auto;
+	width: 70%;
+	height: 1000px;
+	border: solid 1px #CCCCCC;
+
+}
+
+/* ID's */
+
+#fixed {
+
+	position: fixed;
+	background: #eee;
+	height: 100px;
+	width: 150px;
+	padding: 25px 10px 25px 10px;
+
+
+}
+
+#content {
+
+	margin: 0 auto;
+	padding: 10px 0 0 10px;
+
+}
+
+#para2 {
+
+	margin: 0 auto;
+	padding: 10px 0 0 10px;
+
+}
+
+#relative {
+
+	background: #CCCCCC;
+	padding-top: 15px;
+	height: 250px;
+	width: 600px;
+	position: relative;
+	text-align: center;
+
+}
+
+#absolute {
+
+	background: #B87333;
+	top: 2;
+	position: absolute;
+	height: 125px;
+	width: 175px;
+	z-index: 2;
+
+}
+
