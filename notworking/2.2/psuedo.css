@@ -1,0 +1,26 @@
+a {
+
+		 font-size: 20px;
+
+}
+
+a:hover {
+
+		font-size: 22px;
+		color: red;
+}
+
+a:focus {
+
+		background-color: blue;
+}
+
+a:active {
+
+		color: yellow;
+}
+
+h2:hover {
+
+		color: green;
+}
