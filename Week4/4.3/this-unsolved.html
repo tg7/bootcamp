@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>this</title>
+  </head>
+  <body style="">
+      
+      <script type="text/javascript">
+
+      	//EXAMPLE ONE
+		// What is `this` going to print?
+		console.log(this);
+
+		--> object	
+
+		//EXAMPLE TWO
+		// What is `this` going to print?
+		function myFunction(){
+		  console.log(this);
+		}
+		myFunction();
+
+		--> object
+
+		//EXAMPLE THREE (Important)
+		// What is `this.name` going to print?
+		var someObj = {
+			name: 'Red Hat',
+			say: function() {
+				console.log(this.name);
+			}
+		};
+		someObj.say();
+
+		--> 'Red Hat'
+
+		//EXAMPLE FOUR (Bonus)
+		// What is this going to print? 
+		// Why didn't it print Blue Shell?
+		var myObj = {
+			name: "",
+			yell: function() {
+				this.name = 'Star Powerup';
+				console.log(this);
+				var changeName = function(newName) {
+					this.name = newName;
+				};
+				changeName('Blue Shell');
+				console.log(this);
+			}
+		};
+		myObj.yell();
+
+		--> 'Star Powerup' (because it\'s local to the function) 
+
+		//EXAMPLE FIVE (Bonus)
+		// What is this going to print? 
+		Star Powerup	
+		// Why did this print Blue Shell? But not the last example? 
+
+		Because changeName was defined inside of the local function 
+
+		var myObj = {
+			name: "",
+			yell: function() {
+				var self = this; //Use 'self' to store 'this' currently pointing to the 'myObj'
+
+				this.name = 'Star Powerup';
+				console.log(this);
+				var changeName = function(newName) {
+					self.name = newName; //'self' is now the correct 'this' for 'myObj'
+				};
+				changeName('Blue Shell');
+				console.log(self);
+			}
+		};
+		myObj.yell();
+
+      </script>
+  </body>
+</html>

@@ -76,9 +76,18 @@
 
 	    //Step 6: on the element with an id of clear, attach an on click function
 	    	/*
-*/
 
-	   });
+*/$( "#clear" ).click(function() {
+                    $( "#display" ).empty();
+               });
+        for (var i = 0; i < letters.length; i++) {
+            var b = $('<button>');
+            b.addClass('letter-button letter letter-button-color');
+            b.attr('data-let', letters[i]);
+            b.text(letters[i]);
+            $('#buttons').append(b);
+
+	 
 
 
 /*
