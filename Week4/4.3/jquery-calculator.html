@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>jQuery Calculator</title>
+  <meta charset="UTF-8">
+  <title>jQuery Calculator</title>
 
-    <!-- Added link to the jQuery Library -->
-    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  <!-- Added link to the jQuery Library -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 
     <!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -13,7 +13,6 @@
 </head>
 <body>
 
-<!-- Jumbotron for Title -->
 <div class="jumbotron">
     <h1 class="text-center">jQuery Calculator</h1>
     <h3 class="text-center">Perform basic mathematic operations using the power of jQuery!</h3>
@@ -39,21 +38,20 @@
                             <button id="button4" class="btn btn-primary number" value=4><h1>4</h1></button>
                             <button id="button5" class="btn btn-primary number" value=5><h1>5</h1></button>
                             <button id="button6" class="btn btn-primary number" value=6><h1>6</h1></button>
-                            <button id="buttonMinus" class="btn btn-danger operator" value=minus><h1>&minus;</h1></button>
+                            <button id="buttonMinus" class="btn btn-danger operator" value=minus><h1>-</h1></button>
                             <br><br>
                             <button id="button7" class="btn btn-primary number" value=7><h1>7</h1></button>
                             <button id="button8" class="btn btn-primary number" value=8><h1>8</h1></button>
                             <button id="button9" class="btn btn-primary number" value=9><h1>9</h1></button>
-                            <button id="buttonMultiply" class="btn btn-danger operator" value=times><h1>&times;</h1></button>
+                            <button id="buttonMultiply" class="btn btn-danger operator" value=times><h1>x</h1></button>
                             <br><br>
                             <button id="button0" class="btn btn-primary number" value=0 value=0><h1>0</h1></button>
-                            <button id="buttonDivide" class="btn btn-danger operator" value=divide><h1>&divide;</h1></button>
+                            <button id="buttonDivide" class="btn btn-danger operator" value=divide><h1>/</h1></button>
                             <button id="buttonPower" class="btn btn-danger operator" value=power><h1>^</h1></button>
                             <button id="buttonEqual" class="btn btn-success equal" value=equals><h1>=</h1></button>
                             <br><br>
-                            <button id="buttonClear" class="btn btn-default clear" value=clear value=clear><h1>clear</h1></button>
+                            <button id="button0" class="btn btn-default clear" value=clear value=clear><h1>clear</h1></button>
                 </div>
-
             </div>
         </div>
 
@@ -79,89 +77,106 @@
 
 $(document).ready(function(){
 
+    var calculationDiv = $('#calculation');
 
-// Variables
+    var firstNumber = "";
+    var secondNumber = "";
+    var operator = "";
+    var result = 0;
+    var hasNumber = false;
+    var firstNumberComplete = false;
+    var lockButtons = false;
 
-var num1 = $('#button1').val(); {
-    console.log(num1);
-}
+    // Check if any button is clicked...
+    $('button').on("click", function() {
 
-var num2 = $('#button2').val(); {
-    console.log(num2);
-}
- 
-var num3 = $('#button3').val(); {
-    console.log(num3);
-}  
+        // Checks if it's a number
+        if ($(this).hasClass("number") && !lockButtons){
 
-var num4 = $('#button4').val(); {
-    console.log(num4);
-}  
+            hasNumber = true;
 
-var num5 = $('#button5').val(); {
-    console.log(num5);
-}  
+            // If we haven't received an operator yet
+            if (firstNumberComplete == false){
 
-var num6 = $('#button6').val(); {
-    console.log(num6);
-}  
+                // Grab the number of the value clicked then builds a string with it
+                firstNumber = firstNumber + $(this).attr("value") ;
 
-var minus = $('#buttonMinus').val(); {
-    console.log(minus);
-}  
+                // Print the number to the firstPage
+                console.log(firstNumber); 
 
-var num7 = $('#button7').val(); {
-    console.log(num7);
-}  
+                // Print it to the div
+                $("#firstNumber").html(firstNumber);
+            } else {
+                // Grab the number of the value clicked then builds a string with it
+                secondNumber = secondNumber + $(this).attr("value") ;
 
-var num8 = $('#button8').val(); {
-    console.log(num8);
-}  
+                // Print the number to the firstPage
+                console.log(secondNumber); 
 
-var num9 = $('#button9').val(); {
-    console.log(num9);
-}  
+                // Print it to the div
+                $("#secondNumber").html(secondNumber);
+            }
+        }
 
-var multiply = $('#buttonMultiply').val(); {
-    console.log(multiply);
-}  
+        // Checks if its an operator (but not =)
+        if ($(this).hasClass("operator") && hasNumber && !lockButtons){
+            firstNumberComplete = true;
 
-var num0 = $('#button0').val(); {
-    console.log(num0);
-}  
+            $('#operator').html('<button>'+ $(this).val() +'</button>');
+            operator = $(this).attr("value");
+        }
 
-var divi = $('#buttonDivide').val(); {
-    console.log(divi);
-}  
+        // Checks if the equal button has been pressed. If so...
+        if($(this).hasClass("equal")){
 
-var raise = $('#buttonPower').val(); {
-    console.log(raise);
-}  
+            // Lock the keyboard from being clicked
+            lockButtons = true;
 
-var total = $('#buttonEqual').val(); {
-    console.log(total);
-}  
+            firstNumber = parseInt(firstNumber);
+            secondNumber = parseInt(secondNumber);
 
-var cancel = $('#buttonClear').val(); {
-    console.log(cancel);
-}  
+            // Then figure out which operator was clicked and perform the necessary functions. 
+            // Then show the result in the html
+            if (operator == "plus"){
+                result = firstNumber + secondNumber;
+            }
 
-// On-Click Functions
+            if (operator == "minus"){
+                result = firstNumber - secondNumber;
+            }
 
-$('#button1').click(function() {
-    var num1 = $('#firstNumber');
-    $('#result').append(num1);
+            if (operator == "times"){
+                result = firstNumber * secondNumber;
+            }
 
+            if (operator == "divide"){
+                result = firstNumber / secondNumber;
+            }
 
+            if (operator == "power"){
+                result = Math.pow(firstNumber, secondNumber);
+            }
 
-});
+            $("#result").html(result);
+        }
 
+        // If clear is selected then wipe away all of the content from the screen and unlock the buttons.
+        if($(this).hasClass('clear')){
 
+            firstNumber = "";
+            secondNumber = "";
+            operator = "";
+            result = 0;
+            firstNumberComplete = false;
+            lockButtons = false;
 
+            $("#firstNumber, #secondNumber, #operator, #result").empty();
+        }
+    })
 
-});
+})
 
 </script>
-    
+  
 </body>
 </html>
