@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+function hi () {
+	console.log(this);
+
+};
+
+hi();
+
+// This will return the window since it's a global scope
+
+var person = {
+	name: 'matt',
+	sayHi: function() {
+		hi();
+	}
+
+};
+
+person.sayHi();
+
+// This will still return the window since it's a global scope
+
+// This is always an object - and refers to the object that is used to call the function
+
+</script>
+</body>
+</html>
