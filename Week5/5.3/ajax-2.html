@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script src='http://code.jquery.com/jquery-2.1.3.min-js'></script>
+<script type="text/javascript">
+
+    var title = 'big+daddy';
+    var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=small&r=json";
+
+    $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+        console.log(response, "other");
+
+        console.log(response.Runtime)
+
+});
+
+
+</script>
+
+
+</body>
+</html>
