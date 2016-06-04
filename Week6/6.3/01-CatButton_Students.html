@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>The Magical Dog Button</title>
+</head>
+
+<body>
+    <button id="dogButton">Magical Dog Button</button>
+    <div id="images">
+    </div>
+    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+    <script type="text/javascript">
+    
+    // On Click Function for Magic Cat Button
+    $('#dogButton').on('click', function() {
+       
+        // Describes the Endpoint for the API and assesses and searches for dogs
+        var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dogs";
+
+        // Starts the Get Function from the endpoint
+        $.ajax({url: queryURL, method: 'GET'})
+
+            // Completes the function from the server
+            .done(function(response) {
+
+                // Makes the imageURL variable equal to the response image data object
+                var imageUrl = response.data.image_original_url;
+
+                // Makes the catImage variable equal to the images / Created dogImage Variable
+                var dogImage = $("<img>");
+                
+                // Adds attributes to the specified image for the source and the alt tag
+                dogImage.attr('src', imageUrl);
+                dogImage.attr('alt', 'dog image');
+
+                // Places catImages to the images div as the 1st child
+                $('#images').prepend(dogImage);
+            });
+    });
+    </script>
+</body>
+
+</html>

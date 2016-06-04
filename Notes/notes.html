@@ -120,6 +120,31 @@ r = json
 Native XHR: GET
 http://codepen.io/rcbapril2016/pen/aZbJWy?editors=1011
 
+<h4>June 2nd 2016</h4>
+
+API's 
+
+AJAX = method used to retrieve data from a url database
+
+JSON = Javascript Object Notation
+
+<h5>AJAX Notation</h5>
+	
+		var type = ''
+		var queryURL = '' 
+
+		$.ajax({url: 'link', method: 'GET'}) <!-- This Retuns an object-->
+		.done(function(response) {
+				console.log(response);
+
+		Turns objects to strings
+		(JSON.stringify(response));
+
+		Turns objects to numbers or back to object
+		(JSON.parse(response));
+
+});
+
 
 
 
