@@ -4,10 +4,13 @@
 <head>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
-<link rel="stylesheet" href="assets/css/reset.css" type="text/css">
-<link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+<!-- <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+<link rel="stylesheet" href="assets/css/styles.css" type="text/css"> -->
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+	<!-- ***** FireBase Src Link  -->
+<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
 	<title></title>
 </head>
@@ -15,7 +18,16 @@
 
 <div class="container">
 
-	<div class="jumbotron text-center">
+	<div class="jumbotron text-center" id="top"><style type="text/css">
+		
+		#top {
+
+			background-color: black;
+			color:white;
+		}
+
+	</style>
+
 		<h1>Employee Data Management</h1>
 		<h3>A Comprehensive Directory of Emplyee Billable Hours</h3>
 	</div>
@@ -24,7 +36,7 @@
   	<div class="panel panel-primary">
       <div class="panel-heading">Current Employees</div>
       	<div class="panel-body">  
- 					 <table class="table table-hover">
+ 					 <table class="table table-hover" id="mainTable">
 				    <thead>
 				      <tr>
 				        <th>Employee Name</th>
@@ -97,6 +109,55 @@
 		</div>
 	</div>
 
+<script type="text/javascript">
+
+var clickData = new Firebase ("https://employeeadd.firebaseio.com/");
+
+$('#runSubmit').on('click', function() {
+	
+	var name = $('#employeeName').val();
+	var role = $('#role').val();
+	var start = $('#startDate').val();
+	var rate = $('#monthlyRate').val();
+
+	clickData.push({
+		name: name,
+		role: role,
+		start: start,
+		rate: rate,
+		// dateAdded: Firebase.ServerValue.Timestamp
+	});
+
+	return false; 
+
+});
+
+// Pushes Data onto Page
+
+	clickData.on("child_added", function(childSnapshot) {
+
+		console.log(childSnapshot.val().name);
+		console.log(childSnapshot.val().role);
+		console.log(childSnapshot.val().start);
+		console.log(childSnapshot.val().rate);
+		// console.log(childSnapshot.val().dateAdded);
+
+
+
+		// Creates Row When Child is Created
+		$('#mainTable td').append(childSnapshot.val().name);
+		$('#mainTable td').append(childSnapshot.val().role);
+		$('#mainTable td').append(childSnapshot.val().start);
+		$('#mainTable td').append(childSnapshot.val().rate);
+
+
+	}, function(errorObject) {
+
+		console.log("Errors Handles: " + errorObject.code);
+
+	});
+
+</script>
 
 </div>
 

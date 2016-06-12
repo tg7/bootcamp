@@ -164,7 +164,20 @@ $('#greeting').append(localStorage.getItem("name") + " " );
 
 <h5>FireBase</h5>
 
+On Train HW do not save Time Remaining - It should be a calculation through Javascript
 
+Firebase.ServerValue.timestamp --> Shows Time Value 
+
+child_Added is used when trying to add data .push instead of .set
+
+value is used when using .set instead of .push
+
+Sort Order To Last
+
+*var name*.orderByChild.limitToLast(1).on("child_added", function(snapshot) {
+	
+	
+}
 
 
 
