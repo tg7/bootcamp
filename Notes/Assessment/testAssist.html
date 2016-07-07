@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    
+  </title>
+
+<!--jQuery CDN-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+</head>
+<body>
+
+<style type="text/css">
+  
+
+</style>
+  
+<div id="like-counter">LIKE</div>
+
+<div class="images">T</div>
+
+<div class="images">R</div>
+
+<div class="images">G</div>
+
+<br>
+
+<div id="menu-slider">MENU HERE</div>
+
+<br>
+
+<div class="article-section"><h3>ARTICLES GO HERE!</h3>
+
+<h1>This is the first article</h1>
+<p>How are things</p>
+<h2> This is the second article</h2>
+
+</div>
+
+<br>
+
+<div id="myButton">
+
+<button>Test</button>
+
+</div>
+
+<a class="link" href="http://cnn.com">CNN</a>
+
+<br>
+
+<div id="win-count"><h5>Win Count:</h5>
+<p>Test</p><h7>This is legit</h7>
+<p>How</p></div>
+<script type="text/javascript">
+  
+function beAwesome(awesomeSauce) {
+  console.log('Yes')
+
+}
+
+(beAwesome);
+
+var beAwesomer = function(awesomerSauce) {
+  console.log('Cool')
+
+}
+
+var myCoolArray = ["Sports", "Animals", "Snowboarding", "Coding"];
+
+var myObject =  {
+
+  myName: "Todd",
+  myBirthdayMonth: "December", 
+
+  myAlertFunc: function(string_type) {
+    alert(string_type);
+    return(string_type); 
+    },
+
+  myAdditionFunc: function(integer, type) {
+    return (integer) + (type);
+    },
+
+};
+
+console.log(myObject.myName);
+console.log(myObject.myBirthdayMonth);
+console.log(myObject.myAlertFunc("hello there"));
+console.log(myObject.myAdditionFunc(3,4));
+
+var jedi = ['Yoda', 'Mace Windu', 'Qui-Gon', 'Obi-Wan', 'Luke'];
+
+for (var k = 0; k < jedi.length; k++) {
+  console.log(jedi[k]);
+
+};
+
+// document.getElementById('myButton').addEventListener("click", function() {
+
+// alert("Hello World!");
+//   });
+
+// document.getElementById('myButton').addEventListener("click", test)
+
+// function test() {
+// alert("Hello World!");
+//   };
+
+$('#myButton').on("click", function() {
+
+  alert("Hello World!")
+
+});
+
+var elementz = document.getElementsByClassName('images');
+
+var coolSlider = document.getElementById('menu-slider');
+
+$('.article-section').children();
+
+$('#win-count').find("p").css( "background-color", "red" );
+
+
+// $.ajax({
+
+//   method: "GET",
+//   url: 'http://api.github.com/username/repos'
+
+// });
+
+// .done(function(data, status, jqXHR) {
+
+// });
+
+// .done(function(jqXHR, status, error) {
+
+// });
+
+console.log(2 + 5);
+console.log(200 - 100);
+console.log(10 * 50);
+console.log(60 / 12);
+console.log(22 % 10);
+
+var superheroes = [
+
+{
+    name: 'The Hulk',
+    type: ' Human/Mutant',
+    superPower: 'Hulk Smash',
+    powerLevel: 1500
+},
+
+{
+    name: 'Ironman',
+    type: 'Human',
+    superPower: 'One Person Combat Machine',
+    powerLevel: 950
+
+},
+
+{
+    name: 'Hawkeye',
+    type: 'Human',
+    superPower: 'Master Marksman',
+    powerLevel: 600
+
+}, 
+
+{
+    name: 'Thor',
+    type: 'Asgardian',
+    superPower: ' God Of Thunder',
+    powerLevel: 2000
+
+}
+
+];
+
+// if (superheroes[0].powerLevel > superheroes[3].powerLevel) {
+
+//   console.log(superheroes[0].name + " wins");
+// } else {
+
+//   console.log(superheroes[3].name + " wins!");
+// }
+
+// if (superheroes[3].powerLevel <= superheroes[4].powerLevel) {  console.log('The conflict ensues');
+
+// }  else {
+
+//   ('The battle stops here!');
+// }
+
+
+var universe = 'Star Wars'; 
+
+switch (universe) {
+
+  case 'DC':
+    console.log('Spiderman Lives Here!');
+    break;
+  case 'Marvel':
+    console.log('The X-Mean Live here!');
+    break;
+  case 'Star Wars':
+    console.log('The Jedi Live here');
+    break;
+  case 'Star Trek':
+    console.log('The Federation lives here!');
+    break;
+  default:
+    console.log('Everyone lives here!');
+
+}
+
+// console.log(superheroes[1].name);
+// console.log(superheroes[1].type);
+// console.log(superheroes[1].superPower);
+
+
+var x = 5
+var y = 2
+
+console.log(x + y);
+
+// var counter = 10;
+// counter ++
+
+// console.log(counter);
+
+var counter = 20;
+counter --
+
+console.log(counter);
+
+function changeLink() {
+    var link = document.getElementsByClassName('link');
+
+    link.innerHTML = "INC";
+    link.setAttribute('href', "http://inc.com");
+
+    return false;
+}
+
+function changeLink() {
+    var link = $('.link')
+    $('.link').attr('href', "http://inc.com");
+}
+
+// document.getElementById("like-counter").style.width = "100px";
+
+$('#like-counter').width(100);
+
+
+var foo = function() {
+alert('Hip-Hop Yes')
+
+};
+
+$('#like-counter').on("click", foo);
+
+</script>
+
+</body>
+</html>
