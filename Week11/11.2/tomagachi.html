@@ -1,0 +1,110 @@
+<script type="text/javascript">
+  
+  var dogConfig = {
+  hungry: false,
+  sleep: false,
+  bored: true,
+  age: 0, 
+  outside: false, 
+  bark:function() {
+    console.log("Woof Woof");
+
+  },
+  goOutside: function() {
+    if (this.outside === false) {
+      console.log('Yay! I love the outdoors!');
+      this.outside = true;
+      this.bark();
+    } else if (this.outside === true) {
+      console.log('Were already outside though...');
+    }
+  }
+}
+function DigitalPal(obj) {
+  this.hungry = obj.hungry;
+  this.sleepy = obj.sleepy;
+  this.bored = obj.bored;
+  this.age = obj.age;
+  this.bark = obj.bark;
+  this.goOutside = obj.goOutside;
+  this.feed = function() {
+
+    if (this.hungry === true)  {
+      console.log('That was Yummy!');
+      this.hungry = false;
+      this.sleepy = true;
+
+    } else if (this.hungry === false) {
+      console.log('You\'re overfeeding me, I\'m going to explode!');
+    }
+
+  }
+
+  this.sleep = function() {
+
+    if (this.sleepy === true) {
+      console.log('Zzzzzzzzz');
+      this.sleepy = false;
+      this.bored = true;
+      this.increaseAge();
+
+    } else {
+      console.log('Time to hit the club!');
+
+    }
+
+  }
+
+  this.play = function() {
+
+    if (this.bored === true) {
+      console.log('Time to Play Pokemon Go!');
+      this.bored = false;
+      this.hungry = true;
+
+    } else if (this.bored === false) {
+      console.log('Later...Not now I\'m trying to download Pokemon Go!');
+
+    }
+
+  }
+
+  this.increaseAge = function() {
+    this.age ++;
+    console.log('Time to party, it\'s my bday!' + ' I am' + this.age + ' years old now!');
+
+  }
+}
+
+
+
+var dog = new DigitalPal(dogConfig);
+console.log(dog)
+
+
+dog.sleep();
+
+dog.sleepy = true;
+dog.sleep();
+
+  
+
+  // goInside = function() {
+  //   if (Outside === true) {
+
+  //     console.log()
+  //   }
+
+  // }
+
+
+
+</script>
+
+
+For an example use this link 
+<h5>http://codepen.io/yana908/pen/BzdGzy?editors=0012</h5>
+
+
+
+  
