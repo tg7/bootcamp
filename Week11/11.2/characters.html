@@ -1,0 +1,56 @@
+<script type = "text/javascript">
+
+// Constructor Function using characters.txt file
+
+function characters(options) {
+
+  this.name = options.name;
+  this.profession = options.profession;
+  this.gender = options.gender;
+  this.age = options.age;
+  this.strength = options.strength;
+  this.HP = options.HP;
+  this.PrintStats = function() {
+
+    console.log(this.name, this.profession, this.gender, this.age, this.strength, this.HP);
+
+  },
+
+  this.isAlive = function() {
+    if (this.HP > 0) {
+      console.log(this.HP);
+
+    } else {
+      console.log("Character has been defeated!");
+    }
+
+  }
+
+  this.Attack = function(victim) {
+    console.log (victim.HP - this.strength);
+  
+
+  }
+
+  this.LevelUp = function() {
+    console.log (this.age ++, this.strength +5, this.HP + 25);
+
+  }
+
+
+}
+  
+  // Character Names
+
+  var todd = new characters({name: "todd", profession: "coder", gender: "male", age: 26, strength: 40, HP: 100, PrintStats: true })
+
+  var toad = new characters({name: "toad", profession: "raceCarDriver", gender: "male", age: 1304, strength: 25, HP: 50, PrintStats: true })
+
+  // Called Functions
+
+todd.PrintStats();
+toad.PrintStats();
+todd.Attack(toad);
+todd.LevelUp();
+
+</script>
