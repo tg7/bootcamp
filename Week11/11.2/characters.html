@@ -2,7 +2,7 @@
 
 // Constructor Function using characters.txt file
 
-function characters(options) {
+function Characters(options) {
 
   this.name = options.name;
   this.profession = options.profession;
@@ -10,7 +10,7 @@ function characters(options) {
   this.age = options.age;
   this.strength = options.strength;
   this.HP = options.HP;
-  this.PrintStats = function() {
+  this.printStats = function() {
 
     console.log(this.name, this.profession, this.gender, this.age, this.strength, this.HP);
 
@@ -27,12 +27,16 @@ function characters(options) {
   }
 
   this.Attack = function(victim) {
-    console.log (victim.HP - this.strength);
-  
+    victim.HP = (victim.HP - this.strength);
+    console.log(victim.HP);
 
   }
 
   this.LevelUp = function() {
+    this.age++;
+    this.strength = this.strength + 5;
+    this.HP = this.HP + 25;
+
     console.log (this.age ++, this.strength +5, this.HP + 25);
 
   }
@@ -42,14 +46,14 @@ function characters(options) {
   
   // Character Names
 
-  var todd = new characters({name: "todd", profession: "coder", gender: "male", age: 26, strength: 40, HP: 100, PrintStats: true })
+  var todd = new Characters({name: "todd", profession: "coder", gender: "male", age: 26, strength: 400, HP: 100})
 
-  var toad = new characters({name: "toad", profession: "raceCarDriver", gender: "male", age: 1304, strength: 25, HP: 50, PrintStats: true })
+  var toad = new Characters({name: "toad", profession: "raceCarDriver", gender: "male", age: 1304, strength: 25, HP: 50})
 
   // Called Functions
 
-todd.PrintStats();
-toad.PrintStats();
+todd.printStats();
+toad.printStats();
 todd.Attack(toad);
 todd.LevelUp();
 
