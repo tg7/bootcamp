@@ -1,0 +1,19 @@
+{
+  "name": "Coin Game",
+  "version": "1.0.0",
+  "description": "game created to show functionality of node and a constructor function",
+  "main": "game.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "players",
+    "score",
+    "constructor"
+  ],
+  "author": "Todd Germaine",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^1.1.2"
+  }
+}
