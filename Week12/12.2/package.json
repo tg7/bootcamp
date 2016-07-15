@@ -1,0 +1,21 @@
+{
+  "name": "icecream",
+  "version": "1.0.0",
+  "description": "icecream mysql test",
+  "main": "icecream.js",
+  "dependencies": {
+    "console-table": "^0.1.2",
+    "console.table": "^0.7.0",
+    "inquirer": "^1.1.2",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "todd g",
+  "license": "ISC"
+}
