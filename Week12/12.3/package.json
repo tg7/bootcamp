@@ -1,0 +1,15 @@
+{
+  "name": "databaseapp",
+  "version": "1.0.0",
+  "description": "app that uses userinput to lookup artists, songs and values",
+  "main": "databaseApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "todd g",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^1.1.2",
+    "mysql": "^2.11.1"
+  }
+}
