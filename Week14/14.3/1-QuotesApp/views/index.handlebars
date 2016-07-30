@@ -10,7 +10,7 @@
       <p><span class="label">Author:</span> {{this.author}}</p>
 
       {{!-- Form should send a delete command to the server --}}
-      <form>
+      <form action="/create" method="get">
         <input type="hidden" name="id" value="{{this.id}}">
         <button type="submit">Delete</button>
       </form>
