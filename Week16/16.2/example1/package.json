@@ -1,0 +1,15 @@
+{
+  "name": "16.2",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "todd g",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^3.0.2",
+    "nightmare": "^2.6.1"
+  }
+}
