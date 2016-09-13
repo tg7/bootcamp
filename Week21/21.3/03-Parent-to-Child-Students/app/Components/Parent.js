@@ -11,7 +11,8 @@ var Parent = React.createClass({
 	// Here we set a generic state associated with the number of clicks
 	getInitialState: function(){
 		return {
-			clicks: 0
+			clicks: 0,
+			foo: "bar"
 		}
 	},
 
@@ -20,7 +21,8 @@ var Parent = React.createClass({
 
 	handleClick: function(){  
     this.setState({
-		clicks: this.state.clicks +1
+		clicks: this.state.clicks +1,
+		foo: "no-bar"
        });
 },
 	
@@ -63,6 +65,7 @@ var Parent = React.createClass({
 
 								{/* This is where we'll show the click count for the parent*/}
 								<h1>{this.state.clicks}</h1>
+								<h1>{this.state.foo}</h1>
 
 								{/*Here we'll deploy the child component. We'll pass it the parent's click counter as a "state"*/}
 								<Child clicks={this.state.clicks}/>

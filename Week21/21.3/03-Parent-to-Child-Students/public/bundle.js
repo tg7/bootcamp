@@ -19771,7 +19771,8 @@
 		// Here we set a generic state associated with the number of clicks
 		getInitialState: function getInitialState() {
 			return {
-				clicks: 0
+				clicks: 0,
+				foo: "bar"
 			};
 		},
 
@@ -19780,7 +19781,8 @@
 
 		handleClick: function handleClick() {
 			this.setState({
-				clicks: this.state.clicks + 1
+				clicks: this.state.clicks + 1,
+				foo: "no-bar"
 			});
 		},
 
@@ -19858,6 +19860,11 @@
 									'h1',
 									null,
 									this.state.clicks
+								),
+								React.createElement(
+									'h1',
+									null,
+									this.state.foo
 								),
 								React.createElement(Child, { clicks: this.state.clicks })
 							)
