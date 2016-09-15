@@ -1,0 +1,32 @@
+/*all h1 tags should be 20px;*/
+h1 {
+    background-color: #cecece;
+    font-size: 20px;
+    &.maintitle {
+        color: red;
+    }
+    &.secondh1 {
+        color: blue;
+        font-size: 10px;
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+nav {
+    background-color: #cecece;
+    > ul > li {
+        list-style: none;
+        display: inline-block;
+        > a {
+            text-decoration: none;
+            &.active {
+                background-color: white;
+            }
+            &:hover {
+                color: black;
+            }
+        }
+    }    
+}
