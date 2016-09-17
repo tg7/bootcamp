@@ -1,29 +1,23 @@
 /*all h1 tags should be 20px;*/
 h1 {
+  background-color: #cecece;
   font-size: 20px; }
-
-/*the h1 with class maintitle should be red*/
-h1.maintitle {
-  color: red; }
+  h1.maintitle {
+    color: red; }
+  h1.secondh1 {
+    color: blue;
+    font-size: 10px; }
+    h1.secondh1:hover {
+      color: red; }
 
 nav {
   background-color: #cecece; }
-
-nav > ul > li {
-  list-style: none;
-  display: inline-block; }
-
-nav > ul > li > a {
-  text-decoration: none; }
-
-nav > ul > li > a.active {
-  background-color: white; }
-
-nav a:hover {
-  color: black; }
-
-ul > li > a {
-  color: blue; }
-
-ul > li > a:hover {
-  color: white; }
+  nav > ul > li {
+    list-style: none;
+    display: inline-block; }
+    nav > ul > li > a {
+      text-decoration: none; }
+      nav > ul > li > a.active {
+        background-color: white; }
+      nav > ul > li > a:hover {
+        color: black; }
