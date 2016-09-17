@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+  
+
+//1) Takes a variables and reverses it
+
+var sports = 'hockey';
+
+//Splits the variable and turns it into an array
+
+sports.split('');
+
+//Puts the array into reverse
+
+sports.split('').reverse();
+
+//Joins the array together into a reverse string
+
+sports.split('').revese().join('');
+
+
+//2) Sort Exercise - How do you find if a number is in an array?
+ 
+var x = [0,5,7,5,8,3,6,3,7];
+
+x.include()//Enter Number To the Left
+
+x.indexOf() // If value is -1 it is not in the array - If it's positive it shows the position in the array
+
+//3) How do you remove the number 1 from this array?
+
+var x = [0,1,2,3];
+
+x.splice(1,1);
+
+//4) How do you remove a and move it to the end of the array?
+
+var x = ['a', 'b', 'c'];
+
+//x.shift removes the element from the array and returns the object
+
+//x.push pushes it to the end of the array after the object is shifted/selected
+
+x.push(x.shift())
+
+//5) How to create a private variable inside of a function
+
+function counter() {
+  var count = 0;
+  return function() {
+    alert(count++);
+  }
+
+}
+
+var c = counter();
+
+//6) Print the numbers from 1 to 100 but for multiples of 3, print "Fizz" instead of the number. For multiples of Five, print "Buzz". For numbers which are multiples of 3 and 5 print "Fizzbuzz".
+
+for (var i = 0; i < 100; i++) {
+
+  if (i % 3 == true) {
+
+      console.log('Fizz');
+  } else if (i % 5 == true) {
+
+      console.log('Buzz');
+  } else if (i % 3 == 0 && i % 5 == 0) {
+      console.log('FizzBuzz');
+  } 
+    else {
+      console.log(i);
+    }
+}
+
+</script>
+</body>
+</html>
+
