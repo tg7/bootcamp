@@ -1,17 +1,10 @@
 <?php
 
-//Name Info
-$firstName = "Todd";
-$lastName = "Germaine";
-$fullName = $firstName . $lastName;
-
-//Age Info
-$birthYear = 1989;
-$age = 2016 - $birthYear;
+$name = "Todd";
+$last = "Germaine";
+$fullName = $name . $last;
 
 echo "My name is $fullName\n";
-
-echo "Im $age years old.\n";
 
 if (strlen($fullName) > 12) {
   
@@ -26,7 +19,7 @@ if (strlen($fullName) > 12) {
   echo str_repeat('=', 12) . "\n";
 
 
-if ($age > 21) {
+  if ($age > 21) {
 
   echo "Sake Sake Sake\n";
 
@@ -41,5 +34,14 @@ if ($age > 21) {
     }
 
 
-?>
+$lastNames = [
+  'Todd' => 'Germaine',
+  'Steven' => 'Galante'
+];
 
+foreach($lastNames as $name => $age) {
+  
+  echo  "$name comes from $lastNames\n";
+}
+
+?>
