@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>    
+
+    <script type="text/javascript">
+        var app = angular.module('myApp', []);
+
+        app.directive('myFirstDirective', function() {
+            return {
+                link: function($scope, element, attrs) {
+                    element.css('background-color', 'red');
+                }
+            };
+        });
+        app.directive('unbold', function() {
+            return {
+                link: function($scope, element, attrs) {
+                    element.css('font-weight', 'normal');
+                }
+            };
+        });
+        app.directive('alertMe', function() {
+            return {
+                link: function($scope, element, attrs) {
+                    element.bind('click', function() {
+                        alert('hey!');
+                    });
+                }
+            };
+        });
+        app.directive('myVideo', function() {
+            return {
+                restrict: 'EAC',
+                templateUrl: '/video.php',
+                scope: {
+                    image: '@', 
+                    time: '@' 
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-app="myApp">
+
+    <div my-first-directive alert-me>my div</div>
+    <p>my paragraph</p>
+    <a href="#">my link</a>
+    <h1 my-first-directive unbold>my h1 tag</h1>
+    <h2 my-first-directive unbold>my h2 tag</h2>
+    <button>my button</button>
+
+
+    <my-video image="https://i.ytimg.com/vi/_GBnJNLoBuw/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=armUj8uYEioBlMJ6Q_EX_8-ZY2w" time="26.22"></my-video>
+
+    <div my-video image="https://i.ytimg.com/vi/_GBnJNLoBuw/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=armUj8uYEioBlMJ6Q_EX_8-ZY2w" time="10.22"></div>
+
+    <div class="my-video" image="https://i.ytimg.com/vi/_GBnJNLoBuw/hqdefault.jpg?custom=true&w=336&h=188&stc=true&jpg444=true&jpgq=90&sp=68&sigh=armUj8uYEioBlMJ6Q_EX_8-ZY2w" time="20.00"></div>
+
+</body>
+</html>

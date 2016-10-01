@@ -1,0 +1,36 @@
+What is an algorithm?
+
+1) An algorithm is a set of calculated formulas or mathematics to follow a certain specification performed by a computer
+
+What are some examples of computer science algorithms?
+
+2) Recursive Algorithm 
+   Insertion Sort
+
+How do you compare one algorithm to the other based on efficiency?
+
+3) Comparing them using Big O notation
+
+
+<script type="text/javascript">
+
+var sortedNumbers = [1, 3, 7, 10, 15, 16, 16, 18, 20, 25, 60]
+
+var checkFunc = function(number) {
+  var containsNumber = false;
+  for (i=0; i < sortedNumbers.length; i++) {
+    console.log(sortedNumbers[i]);
+    if (sortedNumbers[i] == number ) {
+      containsNumber = true;
+      break;
+    } else {
+      containsNumber = false;
+    };
+  };
+  console.log(containsNumber);
+}
+
+
+checkFunc(3);
+
+</script>

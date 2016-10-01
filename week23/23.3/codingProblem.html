@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+  
+var yourFood = "sandwich";
+
+var reverse = function(s) {
+
+  return s.split("").reverse().join('');
+}
+
+var cashier = {
+  str1: "on",
+  str2: reverse('rgetni'),
+  str3: "ati",
+  request: function(preference) {
+    return preference + ".secretword" + this.str2 + this.str3 + this.str1;
+
+  }
+}
+
+cashier.request(yourFood);
+
+</script>
+
+</body>
+</html>
